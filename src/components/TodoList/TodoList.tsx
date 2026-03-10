@@ -14,7 +14,7 @@ export const TodoList: React.FC = () => {
   const filteredTodos = todos
     .filter(todo => {
       if (status === 'active') return !todo.completed;
-      if (status === 'completed') return !todo.completed;
+      if (status === 'completed') return todo.completed;
       return true;
     })
     .filter(todo => todo.title.toLowerCase().includes(query.toLowerCase()));
